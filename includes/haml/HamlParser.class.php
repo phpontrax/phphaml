@@ -188,7 +188,7 @@ class HamlLine
 	 *
 	 * @var boolean
 	 */
-	protected static $bRegisterSass = true;
+	public static $bRegisterSass = true;
 
 	/**
 	 * One time constructor. Register Textile block

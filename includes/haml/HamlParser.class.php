@@ -184,6 +184,13 @@ class HamlLine
 	protected static $otc = false;
 
 	/**
+	 * Register Sass or not
+	 *
+	 * @var boolean
+	 */
+	protected static $bRegisterSass = true;
+
+	/**
 	 * One time constructor. Register Textile block
 	 * if exists Textile class and Markdown block if
 	 * exists Markdown functions
@@ -205,7 +212,7 @@ class HamlLine
 	 */
 	protected static function tryRegisterSass()
 	{
-		if (file_exists($f = dirname(__FILE__) . '/../sass/SassParser.class.php'))
+		if (self::$bRegisterSass && file_exists($f = dirname(__FILE__) . '/../sass/SassParser.class.php'))
 			require_once $f;
 		else
 			return false;
